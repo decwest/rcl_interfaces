@@ -1,0 +1,9 @@
+# List registered logger names in the serving node's logger-name hierarchy.
+# The base is the node's actual logger name, including its namespace and remapping.
+# No request fields are needed.
+---
+# Sorted, unique registered names in this process that equal the base or are its
+# dot-separated descendants. This is a name filter, not a record of node ownership.
+# Names remain listed after logger destruction, until logging is shut down.
+# Configuring a severity or emitting a log alone does not register a name.
+string[] names

@@ -34,6 +34,10 @@ The ROS API for a node will be as follows inside the node's namespace.
   * Set parameters on this node.
  * `get_logger_levels`: `GetLoggerLevels`
   * Get the logger levels of nodes which are in the same process space.
+ * `list_loggers`: `ListLoggers`
+  * List registered logger names matching this node's logger name and dot-separated descendants.
+    The filter uses the node's actual logger name, including namespace and remapping.
+    It does not track node ownership; names are retained until logging shutdown.
  * `set_logger_levels`: `SetLoggerLevels`
   * Set the logger levels of nodes which are in the same process space.
 
@@ -60,6 +64,7 @@ The ROS API for a node will be as follows inside the node's namespace.
 * [SetParameters](srv/SetParameters.srv): Add or change a list of parameters individually
 * [SetParametersAtomically](srv/SetParametersAtomically.srv): Add or change all parameters in a list or none at all
 * [GetLoggerLevels](srv/GetLoggerLevels.srv): Get the logger levels of a specific list of nodes which are in the same process space
+* [ListLoggers](srv/ListLoggers.srv): List registered names in the serving node's logger-name hierarchy
 * [SetLoggerLevels](srv/SetLoggerLevels.srv): Change a list of logger levels of nodes which are in the same process space
 
 ## Quality Declaration
