@@ -36,6 +36,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/SetParametersAtomically.srv"
   "srv/SetParameters.srv"
   "srv/GetLoggerLevels.srv"
+  "srv/ListLoggers.srv"
   "srv/SetLoggerLevels.srv"
   DEPENDENCIES builtin_interfaces
 )
